@@ -8,35 +8,7 @@
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="top">
-
-    <div class="top-inner">
-
-        <a class="brand" href="index.html">
-
-            <img
-                src="logo.png"
-                alt="Web Technology Notes Logo"
-                class="site-logo"
-            >
-
-            <span class="brand-copy">
-
-                <span class="brand-name">
-                    WEB TECHNOLOGY NOTES
-                </span>
-
-                <span class="brand-subtitle">
-                    One Night Fight Solution
-                </span>
-
-            </span>
-
-        </a>
-
-    </div>
-
-</header>
+<header class="top"><div class="top-inner"><a class="brand" href="../index.html"><span class="brand-mark">PM</span><span class="brand-copy"><span class="brand-name">PURUSHOTTAM MANDAL</span><span class="brand-subtitle">Web Technology Notes</span></span></a></div></header>
 <div class="layout"><aside class="toc"><p class="toc-title">In this unit</p><ul><li><a href="#history-of-the-internet">History of the Internet</a></li><li><a href="#world-wide-web-and-html">World Wide Web and HTML</a></li><li><a href="#protocols--http-and-smtp">Protocols: HTTP and SMTP</a></li><li><a href="#protocols--pop3--mime-and-imap">Protocols: POP3, MIME and IMAP</a></li><li><a href="#domain-name-server--dns">Domain Name Server (DNS)</a></li><li><a href="#web-browsers">Web browsers</a></li><li><a href="#web-servers">Web servers</a></li><li><a href="#client-server-model-and-ip-addressing">Client-server model and IP addressing</a></li><li><a href="#http-request-and-response">HTTP request and response</a></li><li><a href="#http-vs-https">HTTP vs HTTPS</a></li><li><a href="#quick-revision"><b>Quick revision</b></a></li><li><a href="#important-questions"><b>Important questions</b></a></li></ul></aside><main><h1>Unit 1: Internet and web basics</h1><section id="history-of-the-internet"><h2>History of the Internet</h2>
 <p>The Internet is a global network of networks that exchange data using the TCP/IP protocol suite.</p>
 <ul>
@@ -127,4 +99,4 @@ Content-Length: 1256
 <p>HTTPS gives <b>confidentiality</b> (encryption), <b>integrity</b> (data is not altered) and <b>authentication</b> (the server is who it claims to be).</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>HTTPS is HTTP protected by TLS. It provides encryption, integrity and server authentication, while ordinary HTTP sends application data without TLS protection.</p><p><strong>Example: </strong>A login form should normally be submitted over HTTPS so credentials are encrypted in transit.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>HTTPS protects confidentiality</li><li>Detects tampering through integrity protection</li><li>Certificates help authenticate servers</li></ul></td><td><ul><li>TLS adds processing and certificate-management requirements</li><li>Configuration mistakes can weaken security</li><li>HTTPS does not make an insecure application automatically safe</li></ul></td></tr></table><div class="difference-box"><h4>📊 Difference / Comparison</h4><table><tr><th>Aspect</th><th>Option A</th><th>Option B</th></tr><tr><td>Security</td><td>No TLS encryption</td><td>TLS encryption</td></tr><tr><td>Default port</td><td>80</td><td>443</td></tr><tr><td>Certificate</td><td>Not required</td><td>Server certificate normally used</td></tr><tr><td>Typical use</td><td>Basic/non-sensitive transfer</td><td>Modern secure web</td></tr></table></div></div></section><section id="quick-revision"><h2>Quick revision</h2><ul><li>Internet = network of networks using TCP/IP; the Web is a service on top of it.</li><li>HTTP is stateless; cookies and sessions add state. HTTPS = HTTP + TLS.</li><li>SMTP sends mail; POP3 downloads; IMAP syncs on server; MIME adds attachments.</li><li>DNS maps domain names to IP addresses (A, AAAA, CNAME, MX, NS records).</li><li>Ports: HTTP 80, HTTPS 443, SMTP 25, POP3 110, IMAP 143, DNS 53.</li><li>Browser = client that renders content; web server = software that answers HTTP requests.</li></ul></section><section id="important-questions"><h2>Important questions by Bloom level</h2><p class="note">Course outcome: <b>CO1</b>. Start with Remember and Understand for short answers, and practise Apply, Analyze, Evaluate and Create for long answers.</p><div class="bloom"><h3><span class="tag">L1</span> Remember</h3><ol><li>Define the Internet and the World Wide Web.</li><li>List the full forms of HTTP, SMTP, POP3, IMAP, MIME and DNS.</li><li>Name any four HTTP methods and four status codes.</li><li>State the default port numbers of HTTP, HTTPS, SMTP and POP3.</li></ol></div><div class="bloom"><h3><span class="tag">L2</span> Understand</h3><ol><li>Explain the working of HTTP with a request and response example.</li><li>Differentiate POP3 and IMAP.</li><li>Explain the role of MIME in email.</li><li>Describe how DNS resolves a domain name step by step.</li><li>Explain why HTTP is called a stateless protocol.</li></ol></div><div class="bloom"><h3><span class="tag">L3</span> Apply</h3><ol><li>Write the HTTP request your browser sends to fetch <code>/notes.html</code> from <code>www.example.com</code>.</li><li>Show how a DNS lookup of <code>www.quantumeducation.com</code> flows through root, TLD and authoritative servers.</li><li>Choose the protocol (SMTP, POP3 or IMAP) for: sending mail, reading mail on phone and laptop, and downloading mail for offline use.</li></ol></div><div class="bloom"><h3><span class="tag">L4</span> Analyze</h3><ol><li>Compare HTTP and HTTPS in terms of security, port and certificates.</li><li>Analyze what happens from typing a URL to seeing the page rendered.</li></ol></div><div class="bloom"><h3><span class="tag">L5</span> Evaluate</h3><ol><li>Justify why IMAP is preferred over POP3 for users with several devices.</li><li>Judge the importance of DNS caching for web performance.</li></ol></div><div class="bloom"><h3><span class="tag">L6</span> Create</h3><ol><li>Design a simple client-server setup for a college notes website and name the protocols involved.</li></ol></div></section><nav class="pager"><span></span><a href="index.html">All units</a><a href="unit-2.html">Unit 2 →</a></nav></main></div>
 <footer class="foot"><strong>Purushottam Mandal</strong>Web Technology Notes · CS35302<br/><small>B.Tech CSE · 5th Semester · Quantum University · 2026–27</small></footer>
 </body>
-</html>
+</html>             
