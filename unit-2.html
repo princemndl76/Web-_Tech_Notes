@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Unit 2 - Web Technology</title>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="../index.html"><span class="brand-mark">PM</span><span class="brand-copy"><span class="brand-name">PURUSHOTTAM MANDAL</span><span class="brand-subtitle">Web Technology Notes</span></span></a></div></header>
+<div class="layout"><aside class="toc"><p class="toc-title">In this unit</p><ul><li><a href="#lists--tables-and-images">Lists, tables and images</a></li><li><a href="#forms-and-frames">Forms and frames</a></li><li><a href="#dynamic-html-with-javascript">Dynamic HTML with JavaScript</a></li><li><a href="#css-and-document-type-definition">CSS and Document Type Definition</a></li><li><a href="#xml-and-xml-schemas">XML and XML schemas</a></li><li><a href="#object-models-and-presenting-xml">Object models and presenting XML</a></li><li><a href="#xml-processors--dom-and-sax">XML processors: DOM and SAX</a></li><li><a href="#css-selectors-and-the-box-model">CSS selectors and the box model</a></li><li><a href="#javascript-form-validation">JavaScript form validation</a></li><li><a href="#dtd-vs-xml-schema">DTD vs XML Schema</a></li><li><a href="#quick-revision"><b>Quick revision</b></a></li><li><a href="#important-questions"><b>Important questions</b></a></li></ul></aside><main><h1>Unit 2: HTML, JavaScript, CSS and XML</h1><section id="lists--tables-and-images"><h2>Lists, tables and images</h2>
+<p><b>Lists</b></p><pre><code>&lt;ul&gt;&lt;li&gt;Unordered item&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Ordered item&lt;/li&gt;&lt;/ol&gt;
+&lt;dl&gt;&lt;dt&gt;Term&lt;/dt&gt;&lt;dd&gt;Definition&lt;/dd&gt;&lt;/dl&gt;</code></pre>
+<p><b>Tables</b></p><pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Asha&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<p><b>Images:</b> <code>&lt;img src="photo.jpg" alt="Description" width="200"&gt;</code>. The <code>alt</code> text is shown if the image fails to load and is read by screen readers.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>HTML lists organize items, tables represent structured tabular data, and images add visual content. Semantic HTML improves readability and accessibility.</p><p><strong>Example: </strong>Use &lt;ul&gt; for a list of topics, &lt;table&gt; for a marks table, and &lt;img&gt; for a diagram with meaningful alt text.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Organizes information clearly</li><li>Tables are useful for comparisons/data</li><li>Images improve visual understanding</li></ul></td><td><ul><li>Tables should not be used for page layout</li><li>Large images can slow pages</li><li>Missing alt text harms accessibility</li></ul></td></tr></table></div></section><section id="forms-and-frames"><h2>Forms and frames</h2>
+<p>A <b>form</b> collects user input and sends it to a server.</p><pre><code>&lt;form action="/submit" method="post"&gt;
+  &lt;input type="text" name="user" required&gt;
+  &lt;input type="password" name="pass"&gt;
+  &lt;select name="year"&gt;&lt;option&gt;3rd&lt;/option&gt;&lt;option&gt;4th&lt;/option&gt;&lt;/select&gt;
+  &lt;textarea name="msg"&gt;&lt;/textarea&gt;
+  &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;</code></pre>
+<p><b>GET</b> puts data in the URL; <b>POST</b> puts it in the request body.</p>
+<p><b>Frames</b> split a window into separate documents. The <code>&lt;frameset&gt;</code> tag is obsolete; modern pages use <code>&lt;iframe&gt;</code> to embed another page.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>HTML forms collect user input using controls such as text fields, radio buttons and submit buttons. Frames/iframes embed another document or browsing context.</p><p><strong>Example: </strong>A login form sends username and password to a server; an iframe can embed a map or another page.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Forms enable user interaction</li><li>Validation improves input quality</li><li>iframes can isolate embedded content</li></ul></td><td><ul><li>Poor form design harms usability</li><li>Sensitive form data needs secure transport</li><li>iframes can introduce security and performance concerns</li></ul></td></tr></table></div></section><section id="dynamic-html-with-javascript"><h2>Dynamic HTML with JavaScript</h2>
+<p><b>Dynamic HTML (DHTML)</b> combines HTML, CSS and JavaScript so a page can change after it loads, without a refresh.</p><pre><code>&lt;p id="msg"&gt;Hello&lt;/p&gt;
+&lt;button onclick="change()"&gt;Click&lt;/button&gt;
+&lt;script&gt;
+  function change() {
+    document.getElementById("msg").innerHTML = "Changed!";
+    document.getElementById("msg").style.color = "red";
+  }
+&lt;/script&gt;</code></pre>
+<p><b>Key ideas:</b> variables (<code>let</code>, <code>const</code>), functions, events (<code>onclick</code>, <code>onsubmit</code>), the DOM, form validation.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>Dynamic HTML combines HTML, CSS and JavaScript so a page can change its content, style or behavior without rebuilding the whole document.</p><p><strong>Example: </strong>JavaScript changes a heading after a button click by updating the DOM.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Interactive interfaces</li><li>Client-side validation</li><li>Can update content dynamically</li><li>Improves user experience</li></ul></td><td><ul><li>JavaScript errors can break interactions</li><li>Heavy scripts can slow pages</li><li>Client-side checks alone are not sufficient for security</li></ul></td></tr></table></div></section><section id="css-and-document-type-definition"><h2>CSS and Document Type Definition</h2>
+<p><b>CSS</b> controls presentation. A rule is <code>selector { property: value; }</code>.</p><pre><code>h1 { color: navy; }
+.note { background: #ffffcc; padding: 8px; }
+#header { border-bottom: 2px solid black; }</code></pre>
+<p><b>Ways to add CSS:</b> inline (<code>style</code> attribute), internal (<code>&lt;style&gt;</code>), external (<code>&lt;link rel="stylesheet"&gt;</code>).</p>
+<p><b>DTD</b> defines the legal structure of an XML document: allowed elements, their order and their attributes.</p><pre><code>&lt;!DOCTYPE student [
+  &lt;!ELEMENT student (name, roll)&gt;
+  &lt;!ELEMENT name (#PCDATA)&gt;
+  &lt;!ELEMENT roll (#PCDATA)&gt;
+]&gt;</code></pre><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>CSS controls presentation such as colors, spacing, layout and typography. A DTD defines the permitted structure and elements of an XML document.</p><p><strong>Example: </strong>CSS can style all h2 headings, while a DTD can specify that an XML document contains a required title element.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>CSS separates presentation from content</li><li>Reusable styles reduce duplication</li><li>DTD provides structural validation for XML</li></ul></td><td><ul><li>Complex CSS can become difficult to maintain</li><li>Browser rendering differences may occur</li><li>DTD has limited datatype support compared with XML Schema</li></ul></td></tr></table></div></section><section id="xml-and-xml-schemas"><h2>XML and XML schemas</h2>
+<p><b>XML</b> (eXtensible Markup Language) stores and transports data using user-defined tags. It must be well-formed: one root element, every tag closed, correct nesting, case-sensitive names.</p><pre><code>&lt;?xml version="1.0"?&gt;
+&lt;student&gt;
+  &lt;name&gt;Asha&lt;/name&gt;
+  &lt;roll&gt;101&lt;/roll&gt;
+&lt;/student&gt;</code></pre>
+<p><b>XML Schema (XSD)</b> also validates XML but is more powerful than a DTD: it supports data types (<code>xs:integer</code>, <code>xs:date</code>), namespaces and is itself written in XML.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>XML is a markup language for representing structured, self-describing data. XML Schema (XSD) defines allowed elements, attributes, structure and datatypes more precisely than DTD.</p><p><strong>Example: </strong>An XML student record can contain &lt;name&gt;, &lt;rollNo&gt; and &lt;marks&gt;; XSD can require marks to be an integer.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Platform-independent data representation</li><li>Human-readable structure</li><li>XSD provides strong validation and datatypes</li></ul></td><td><ul><li>Verbose compared with compact data formats</li><li>Parsing large XML documents can consume resources</li><li>Schema design adds complexity</li></ul></td></tr></table></div></section><section id="object-models-and-presenting-xml"><h2>Object models and presenting XML</h2>
+<p>An <b>object model</b> represents a document as objects a program can access. For XML this is the DOM tree.</p>
+<p><b>Presenting XML:</b></p>
+<ul>
+<li><b>CSS:</b> style XML elements directly, but with no structural change.</li>
+<li><b>XSLT:</b> transforms XML into HTML or other formats, using templates and XPath.</li>
+</ul><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>An object model represents a document as programmable objects and nodes. XML can be presented by applying CSS or transformations such as XSLT.</p><p><strong>Example: </strong>A program can access an XML element through a DOM node and then display selected values in a web page.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Programmatic access to document structure</li><li>Supports transformations and presentation</li><li>Useful for processing structured data</li></ul></td><td><ul><li>DOM can use significant memory for large documents</li><li>Transformations add processing complexity</li></ul></td></tr></table></div></section><section id="xml-processors--dom-and-sax"><h2>XML processors: DOM and SAX</h2>
+<table>
+<tr><th></th><th>DOM</th><th>SAX</th></tr>
+<tr><td>Model</td><td>Tree held in memory</td><td>Event-based stream</td></tr>
+<tr><td>Memory</td><td>High</td><td>Low</td></tr>
+<tr><td>Access</td><td>Random, can read and modify</td><td>Forward only, read only</td></tr>
+<tr><td>Best for</td><td>Small documents, editing</td><td>Large documents, quick scans</td></tr>
+</table>
+<p>SAX fires events such as <code>startElement</code>, <code>characters</code> and <code>endElement</code> as the parser reads the file.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>DOM parses an XML document into an in-memory tree. SAX is event-driven and reads the document sequentially without building the complete tree.</p><p><strong>Example: </strong>Use DOM when random access to many nodes is needed; use SAX for very large XML streams when memory efficiency matters.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>DOM: easy navigation and modification</li><li>SAX: low memory usage and streaming</li><li>Both support systematic XML processing</li></ul></td><td><ul><li>DOM: higher memory use</li><li>SAX: more complex event-based programming and no easy random access</li></ul></td></tr></table></div></section><section id="css-selectors-and-the-box-model"><h2>CSS selectors and the box model</h2>
+<table>
+<tr><th>Selector</th><th>Example</th><th>Matches</th></tr>
+<tr><td>Element</td><td><code>p</code></td><td>All paragraphs</td></tr>
+<tr><td>Class</td><td><code>.note</code></td><td>Elements with class="note"</td></tr>
+<tr><td>ID</td><td><code>#menu</code></td><td>The element with id="menu"</td></tr>
+<tr><td>Descendant</td><td><code>div p</code></td><td>Paragraphs inside a div</td></tr>
+</table>
+<p><b>Box model</b> (from inside out): content, padding, border, margin.</p><pre><code>.box {
+  width: 200px;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 15px;
+}</code></pre><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>CSS selectors identify elements to style. The CSS box model describes every element as content surrounded by padding, border and margin.</p><p><strong>Example: </strong>The selector .card { padding: 20px; border: 1px solid; } styles elements with class card.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Precise reusable styling</li><li>Responsive layouts are easier to build</li><li>Box model makes spacing predictable</li></ul></td><td><ul><li>Specificity conflicts can be confusing</li><li>Different box-model settings can change calculated dimensions</li></ul></td></tr></table></div></section><section id="javascript-form-validation"><h2>JavaScript form validation</h2>
+<p>Validation checks input in the browser before it is sent to the server.</p><pre><code>&lt;form onsubmit="return check()"&gt;
+  &lt;input type="text" id="email"&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+&lt;script&gt;
+function check() {
+  var v = document.getElementById("email").value;
+  if (v.indexOf("@") === -1) {
+    alert("Enter a valid email");
+    return false;     // stops submission
+  }
+  return true;
+}
+&lt;/script&gt;</code></pre>
+<p>Client-side validation improves speed and user experience, but the server must validate again because users can bypass the browser.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>Form validation checks whether user input satisfies required rules before processing. Client-side validation improves usability, but the server must validate again for security.</p><p><strong>Example: </strong>Check that an email field is non-empty and contains a reasonable email format before submission.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Immediate feedback</li><li>Reduces accidental invalid submissions</li><li>Improves user experience</li></ul></td><td><ul><li>Client-side validation can be bypassed</li><li>Complex validation logic can increase code size</li><li>Poor messages can frustrate users</li></ul></td></tr></table></div></section><section id="dtd-vs-xml-schema"><h2>DTD vs XML Schema</h2>
+<table>
+<tr><th></th><th>DTD</th><th>XSD</th></tr>
+<tr><td>Syntax</td><td>Non-XML</td><td>XML</td></tr>
+<tr><td>Data types</td><td>Very limited (#PCDATA)</td><td>Rich (integer, date, boolean...)</td></tr>
+<tr><td>Namespaces</td><td>Not supported</td><td>Supported</td></tr>
+<tr><td>Reuse and extension</td><td>Weak</td><td>Strong (complex types)</td></tr>
+</table><pre><code>&lt;xs:element name="roll" type="xs:integer"/&gt;</code></pre><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>DTD and XML Schema both define valid XML structure. DTD is older and simpler; XSD is XML-based and provides richer datatype and namespace support.</p><p><strong>Example: </strong>Use XSD when an application needs typed values such as integer, date or decimal and stronger constraints.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>DTD: simple and easy to learn</li><li>XSD: rich datatypes, namespaces and detailed constraints</li></ul></td><td><ul><li>DTD: limited datatypes and less XML-oriented syntax</li><li>XSD: more verbose and complex</li></ul></td></tr></table><div class="difference-box"><h4>📊 Difference / Comparison</h4><table><tr><th>Aspect</th><th>Option A</th><th>Option B</th></tr><tr><td>Syntax</td><td>Non-XML declaration syntax</td><td>XML-based</td></tr><tr><td>Datatypes</td><td>Limited</td><td>Rich built-in datatypes</td></tr><tr><td>Namespaces</td><td>Limited</td><td>Strong namespace support</td></tr><tr><td>Complexity</td><td>Simpler</td><td>More detailed</td></tr></table></div></div></section><section id="quick-revision"><h2>Quick revision</h2><ul><li>HTML gives structure, CSS gives style, JavaScript gives behaviour.</li><li>GET shows data in the URL; POST sends it in the body.</li><li>XML must be well-formed; valid XML also follows a DTD or XSD.</li><li>XSD beats DTD: XML syntax, data types, namespaces.</li><li>DOM = whole tree in memory; SAX = event stream, low memory, read-only.</li><li>XSLT transforms XML into HTML or other formats.</li></ul></section><section id="important-questions"><h2>Important questions by Bloom level</h2><p class="note">Course outcome: <b>CO2</b>. Start with Remember and Understand for short answers, and practise Apply, Analyze, Evaluate and Create for long answers.</p><div class="bloom"><h3><span class="tag">L1</span> Remember</h3><ol><li>List the HTML tags used to create lists, tables and forms.</li><li>What is DHTML? Name its three components.</li><li>Define XML, DTD and XSD.</li><li>Name the two types of XML parsers.</li></ol></div><div class="bloom"><h3><span class="tag">L2</span> Understand</h3><ol><li>Explain the difference between GET and POST with examples.</li><li>Explain the three ways of adding CSS to an HTML page.</li><li>Explain the rules of a well-formed XML document.</li><li>Differentiate DOM and SAX parsers.</li><li>Explain the CSS box model.</li></ol></div><div class="bloom"><h3><span class="tag">L3</span> Apply</h3><ol><li>Write HTML code to create a registration form with name, email, password, gender (radio) and course (dropdown).</li><li>Write a JavaScript function to validate that a password has at least 8 characters.</li><li>Write an XML document for a student record and a DTD to validate it.</li><li>Write CSS to make all table rows alternate in colour.</li></ol></div><div class="bloom"><h3><span class="tag">L4</span> Analyze</h3><ol><li>Compare DTD and XML Schema.</li><li>Analyze when to choose SAX over DOM for a 2 GB XML file.</li><li>Compare CSS and XSLT for presenting XML.</li></ol></div><div class="bloom"><h3><span class="tag">L5</span> Evaluate</h3><ol><li>Justify why server-side validation is still needed even when client-side validation exists.</li><li>Assess whether <code>&lt;iframe&gt;</code> is a good replacement for frames.</li></ol></div><div class="bloom"><h3><span class="tag">L6</span> Create</h3><ol><li>Design a web page with a navigation list, a marks table and a contact form, styled with an external stylesheet.</li></ol></div></section><nav class="pager"><a href="unit-1.html">← Unit 1</a><a href="index.html">All units</a><a href="unit-3.html">Unit 3 →</a></nav></main></div>
+<footer class="foot"><strong>Purushottam Mandal</strong>Web Technology Notes · CS35302<br/><small>B.Tech CSE · 5th Semester · Quantum University · 2026–27</small></footer>
+</body>
+</html>

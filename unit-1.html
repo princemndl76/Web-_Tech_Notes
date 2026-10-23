@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Unit 1 - Web Technology</title>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="../index.html"><span class="brand-mark">PM</span><span class="brand-copy"><span class="brand-name">PURUSHOTTAM MANDAL</span><span class="brand-subtitle">Web Technology Notes</span></span></a></div></header>
+<div class="layout"><aside class="toc"><p class="toc-title">In this unit</p><ul><li><a href="#history-of-the-internet">History of the Internet</a></li><li><a href="#world-wide-web-and-html">World Wide Web and HTML</a></li><li><a href="#protocols--http-and-smtp">Protocols: HTTP and SMTP</a></li><li><a href="#protocols--pop3--mime-and-imap">Protocols: POP3, MIME and IMAP</a></li><li><a href="#domain-name-server--dns">Domain Name Server (DNS)</a></li><li><a href="#web-browsers">Web browsers</a></li><li><a href="#web-servers">Web servers</a></li><li><a href="#client-server-model-and-ip-addressing">Client-server model and IP addressing</a></li><li><a href="#http-request-and-response">HTTP request and response</a></li><li><a href="#http-vs-https">HTTP vs HTTPS</a></li><li><a href="#quick-revision"><b>Quick revision</b></a></li><li><a href="#important-questions"><b>Important questions</b></a></li></ul></aside><main><h1>Unit 1: Internet and web basics</h1><section id="history-of-the-internet"><h2>History of the Internet</h2>
+<p>The Internet is a global network of networks that exchange data using the TCP/IP protocol suite.</p>
+<ul>
+<li><b>1969:</b> ARPANET connects four US universities.</li>
+<li><b>1983:</b> ARPANET switches to TCP/IP; this is treated as the birth of the Internet.</li>
+<li><b>1989-91:</b> Tim Berners-Lee proposes the World Wide Web at CERN and builds the first browser and server.</li>
+<li><b>1993:</b> Mosaic, the first widely used graphical browser, is released.</li>
+<li><b>Later:</b> commercial ISPs, broadband, mobile Internet and cloud services.</li>
+</ul><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>The Internet is a global system of interconnected computer networks that communicate using standard protocols, especially TCP/IP. Its development moved from research networks such as ARPANET to today’s commercial, mobile and cloud-based Internet.</p><p><strong>Example: </strong>When you open a college notes website, your browser uses the Internet to communicate with a web server and receive HTML, CSS, images and other resources.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Global communication and information sharing</li><li>Fast access to online services and resources</li><li>Supports education, business, banking and collaboration</li><li>Enables distributed applications and cloud services</li></ul></td><td><ul><li>Security and privacy risks</li><li>Dependence on network connectivity</li><li>Misinformation can spread quickly</li><li>Cyberattacks can affect users and organizations</li></ul></td></tr></table></div></section><section id="world-wide-web-and-html"><h2>World Wide Web and HTML</h2>
+<p>The <b>Web</b> is a service that runs on the Internet. It links documents (web pages) through hyperlinks and identifies them with URLs.</p>
+<p><b>HTML</b> (HyperText Markup Language) describes the structure of a page using tags.</p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;My page&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;a href="https://example.com"&gt;A link&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>A URL has the form <code>scheme://host:port/path?query#fragment</code>.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>The World Wide Web is a service running on the Internet that provides interlinked resources through URLs and web protocols. HTML (HyperText Markup Language) defines the structure and meaning of web documents using elements and attributes.</p><p><strong>Example: </strong>An HTML page can contain a heading, paragraph, image, hyperlink, table and form.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Simple and widely supported</li><li>Works across operating systems and browsers</li><li>Supports hyperlinks and multimedia</li><li>Provides semantic structure for web pages</li></ul></td><td><ul><li>HTML alone does not provide advanced styling</li><li>HTML is client-side markup, not a programming language</li><li>Incorrect markup can reduce accessibility and maintainability</li></ul></td></tr></table></div></section><section id="protocols--http-and-smtp"><h2>Protocols: HTTP and SMTP</h2>
+<p><b>HTTP</b> (HyperText Transfer Protocol) is a stateless request-response protocol between a client (browser) and a server. Default port: 80 (HTTPS: 443).</p>
+<ul>
+<li><b>Methods:</b> GET (read), POST (send data), PUT (replace), DELETE (remove), HEAD.</li>
+<li><b>Status codes:</b> 200 OK, 301 Moved, 404 Not Found, 500 Server Error.</li>
+<li><b>Stateless:</b> the server keeps no memory of earlier requests; cookies and sessions add state.</li>
+</ul>
+<p><b>SMTP</b> (Simple Mail Transfer Protocol) <i>sends</i> email from a client to a server and between servers. Default port: 25 (587 for submission).</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>HTTP is used for transferring web resources between clients and servers. SMTP is an email transport protocol used to submit and relay outgoing email.</p><p><strong>Example: </strong>A browser sends an HTTP GET request for /index.html. An email client may submit an outgoing message through SMTP.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Standardized communication</li><li>Interoperability between different systems</li><li>HTTP supports many request methods and media types</li><li>SMTP supports reliable mail transfer between servers</li></ul></td><td><ul><li>HTTP without TLS does not protect confidentiality</li><li>HTTP is stateless and needs cookies/sessions for application state</li><li>SMTP itself is not the protocol used to read received mail</li></ul></td></tr></table></div></section><section id="protocols--pop3--mime-and-imap"><h2>Protocols: POP3, MIME and IMAP</h2>
+<p><b>POP3</b> (Post Office Protocol) downloads mail from the server to one device, usually deleting it from the server. Port 110.</p>
+<p><b>IMAP</b> (Internet Message Access Protocol) keeps mail on the server and syncs folders across devices. Port 143.</p>
+<p><b>MIME</b> (Multipurpose Internet Mail Extensions) lets email carry non-text content such as images, audio and attachments by labelling each part with a content type, for example <code>image/png</code>.</p>
+<table>
+<tr><th>Protocol</th><th>Job</th><th>Port</th></tr>
+<tr><td>SMTP</td><td>Send mail</td><td>25 / 587</td></tr>
+<tr><td>POP3</td><td>Download mail</td><td>110</td></tr>
+<tr><td>IMAP</td><td>Read mail on server</td><td>143</td></tr>
+</table><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>POP3 retrieves email, IMAP manages and synchronizes mail stored on a server, and MIME extends email formats so messages can carry attachments and different media types.</p><p><strong>Example: </strong>With IMAP, the same inbox can stay synchronized on a laptop and phone. MIME can label an attachment as image/png.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>IMAP supports multi-device synchronization</li><li>POP3 can be simple for local downloading</li><li>MIME supports attachments and rich message content</li></ul></td><td><ul><li>POP3 can be inconvenient for multiple devices</li><li>IMAP depends more on server storage and connectivity</li><li>Email security still requires TLS/authentication mechanisms</li></ul></td></tr></table></div></section><section id="domain-name-server--dns"><h2>Domain Name Server (DNS)</h2>
+<p>DNS translates human-readable domain names (<code>example.com</code>) into IP addresses.</p>
+<p><b>Lookup steps:</b></p>
+<ol>
+<li>Browser checks its cache, then the OS cache.</li>
+<li>Request goes to the recursive resolver (usually the ISP's).</li>
+<li>Resolver asks a root server, then the TLD server (<code>.com</code>), then the authoritative server for the domain.</li>
+<li>The IP address is returned and cached.</li>
+</ol>
+<p><b>Common records:</b> A (IPv4), AAAA (IPv6), CNAME (alias), MX (mail server), NS (name server).</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>DNS is a distributed naming system that maps human-readable domain names to IP addresses and provides other records such as MX and CNAME.</p><p><strong>Example: </strong>Typing example.com causes a resolver to obtain the IP address needed to connect to the site.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Human-friendly names</li><li>Distributed and scalable architecture</li><li>Caching reduces lookup time and traffic</li><li>Supports different record types</li></ul></td><td><ul><li>DNS spoofing/cache poisoning can be security risks</li><li>Incorrect DNS configuration can make services unreachable</li><li>Propagation/caching can delay changes</li></ul></td></tr></table></div></section><section id="web-browsers"><h2>Web browsers</h2>
+<p>A web browser requests, receives and renders web content.</p>
+<ul>
+<li><b>Main parts:</b> user interface, browser engine, rendering engine, networking, JavaScript interpreter, data storage.</li>
+<li><b>Rendering engines:</b> Blink (Chrome, Edge), Gecko (Firefox), WebKit (Safari).</li>
+<li><b>Process:</b> fetch HTML, build the DOM, apply CSS, run JavaScript, paint the page.</li>
+</ul><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>A web browser is client software that retrieves web resources, builds a document model, applies CSS, executes JavaScript and renders the final page for the user.</p><p><strong>Example: </strong>Chrome, Firefox and Safari request an HTML page, download its CSS/JS and render the interface.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>User-friendly interface</li><li>Supports HTML, CSS and JavaScript</li><li>Provides developer tools and security features</li><li>Works with many web services</li></ul></td><td><ul><li>Consumes memory and CPU</li><li>Browser differences can affect rendering</li><li>Extensions/scripts can create privacy or security risks</li></ul></td></tr></table></div></section><section id="web-servers"><h2>Web servers</h2>
+<p>A web server stores web content and answers HTTP requests.</p>
+<ul>
+<li><b>Static content:</b> files sent as they are (HTML, CSS, images).</li>
+<li><b>Dynamic content:</b> pages generated by server-side programs (PHP, Node.js, Java servlets).</li>
+<li><b>Examples:</b> Apache HTTP Server, Nginx, Microsoft IIS, Apache Tomcat.</li>
+</ul><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>A web server is software and the underlying host environment that accepts HTTP requests and returns resources or generated responses.</p><p><strong>Example: </strong>Nginx may serve HTML/CSS files directly, while an application server can generate dynamic data before returning an HTTP response.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Centralized delivery of web resources</li><li>Can handle many concurrent clients</li><li>Supports security, logging, caching and compression</li><li>Can serve both static and dynamic applications</li></ul></td><td><ul><li>Requires configuration and maintenance</li><li>Poorly configured servers can expose security vulnerabilities</li><li>High traffic may require scaling and load balancing</li></ul></td></tr></table></div></section><section id="client-server-model-and-ip-addressing"><h2>Client-server model and IP addressing</h2>
+<p>In the <b>client-server model</b> a client (browser) sends a request and a server sends back a response. One server can serve many clients.</p>
+<ul>
+<li><b>IP address:</b> unique numeric address of a device. IPv4 is 32-bit (<code>192.168.1.1</code>); IPv6 is 128-bit.</li>
+<li><b>Port:</b> identifies the application on a host (HTTP 80, HTTPS 443, SMTP 25, DNS 53).</li>
+<li><b>Socket:</b> IP address + port.</li>
+</ul><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>In the client-server model, clients request services and servers provide them. IP addresses identify hosts/interfaces at the network layer, while ports identify application endpoints.</p><p><strong>Example: </strong>A browser at a client device connects to a server IP on TCP port 443 for HTTPS.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Centralized resource management</li><li>Easy service sharing</li><li>Servers can enforce common policies</li><li>Supports many clients</li></ul></td><td><ul><li>Server failure can affect many clients</li><li>Server infrastructure can become a bottleneck</li><li>Network latency affects user experience</li></ul></td></tr></table></div></section><section id="http-request-and-response"><h2>HTTP request and response</h2>
+<p><b>Request</b></p><pre><code>GET /index.html HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0
+Accept: text/html</code></pre>
+<p><b>Response</b></p><pre><code>HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 1256
+
+&lt;html&gt; ... &lt;/html&gt;</code></pre>
+<table>
+<tr><th>Code range</th><th>Meaning</th><th>Example</th></tr>
+<tr><td>1xx</td><td>Informational</td><td>100 Continue</td></tr>
+<tr><td>2xx</td><td>Success</td><td>200 OK</td></tr>
+<tr><td>3xx</td><td>Redirection</td><td>301 Moved Permanently</td></tr>
+<tr><td>4xx</td><td>Client error</td><td>404 Not Found</td></tr>
+<tr><td>5xx</td><td>Server error</td><td>500 Internal Server Error</td></tr>
+</table><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>An HTTP exchange consists of a client request and a server response. Requests contain a method, target and headers; responses contain a status code, headers and optionally a body.</p><p><strong>Example: </strong>GET /notes.html followed by HTTP/1.1 200 OK and an HTML response body.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Clear request-response model</li><li>Extensible headers and media types</li><li>Stateless design scales well for many applications</li></ul></td><td><ul><li>Repeated requests can add overhead</li><li>State must be handled separately</li><li>HTTP without TLS exposes traffic to interception</li></ul></td></tr></table></div></section><section id="http-vs-https"><h2>HTTP vs HTTPS</h2>
+<table>
+<tr><th></th><th>HTTP</th><th>HTTPS</th></tr>
+<tr><td>Security</td><td>Plain text, can be read in transit</td><td>Encrypted with TLS</td></tr>
+<tr><td>Port</td><td>80</td><td>443</td></tr>
+<tr><td>Certificate</td><td>Not needed</td><td>Needed (from a CA)</td></tr>
+<tr><td>Use</td><td>Non-sensitive content</td><td>Logins, payments, all modern sites</td></tr>
+</table>
+<p>HTTPS gives <b>confidentiality</b> (encryption), <b>integrity</b> (data is not altered) and <b>authentication</b> (the server is who it claims to be).</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>HTTPS is HTTP protected by TLS. It provides encryption, integrity and server authentication, while ordinary HTTP sends application data without TLS protection.</p><p><strong>Example: </strong>A login form should normally be submitted over HTTPS so credentials are encrypted in transit.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>HTTPS protects confidentiality</li><li>Detects tampering through integrity protection</li><li>Certificates help authenticate servers</li></ul></td><td><ul><li>TLS adds processing and certificate-management requirements</li><li>Configuration mistakes can weaken security</li><li>HTTPS does not make an insecure application automatically safe</li></ul></td></tr></table><div class="difference-box"><h4>📊 Difference / Comparison</h4><table><tr><th>Aspect</th><th>Option A</th><th>Option B</th></tr><tr><td>Security</td><td>No TLS encryption</td><td>TLS encryption</td></tr><tr><td>Default port</td><td>80</td><td>443</td></tr><tr><td>Certificate</td><td>Not required</td><td>Server certificate normally used</td></tr><tr><td>Typical use</td><td>Basic/non-sensitive transfer</td><td>Modern secure web</td></tr></table></div></div></section><section id="quick-revision"><h2>Quick revision</h2><ul><li>Internet = network of networks using TCP/IP; the Web is a service on top of it.</li><li>HTTP is stateless; cookies and sessions add state. HTTPS = HTTP + TLS.</li><li>SMTP sends mail; POP3 downloads; IMAP syncs on server; MIME adds attachments.</li><li>DNS maps domain names to IP addresses (A, AAAA, CNAME, MX, NS records).</li><li>Ports: HTTP 80, HTTPS 443, SMTP 25, POP3 110, IMAP 143, DNS 53.</li><li>Browser = client that renders content; web server = software that answers HTTP requests.</li></ul></section><section id="important-questions"><h2>Important questions by Bloom level</h2><p class="note">Course outcome: <b>CO1</b>. Start with Remember and Understand for short answers, and practise Apply, Analyze, Evaluate and Create for long answers.</p><div class="bloom"><h3><span class="tag">L1</span> Remember</h3><ol><li>Define the Internet and the World Wide Web.</li><li>List the full forms of HTTP, SMTP, POP3, IMAP, MIME and DNS.</li><li>Name any four HTTP methods and four status codes.</li><li>State the default port numbers of HTTP, HTTPS, SMTP and POP3.</li></ol></div><div class="bloom"><h3><span class="tag">L2</span> Understand</h3><ol><li>Explain the working of HTTP with a request and response example.</li><li>Differentiate POP3 and IMAP.</li><li>Explain the role of MIME in email.</li><li>Describe how DNS resolves a domain name step by step.</li><li>Explain why HTTP is called a stateless protocol.</li></ol></div><div class="bloom"><h3><span class="tag">L3</span> Apply</h3><ol><li>Write the HTTP request your browser sends to fetch <code>/notes.html</code> from <code>www.example.com</code>.</li><li>Show how a DNS lookup of <code>www.quantumeducation.com</code> flows through root, TLD and authoritative servers.</li><li>Choose the protocol (SMTP, POP3 or IMAP) for: sending mail, reading mail on phone and laptop, and downloading mail for offline use.</li></ol></div><div class="bloom"><h3><span class="tag">L4</span> Analyze</h3><ol><li>Compare HTTP and HTTPS in terms of security, port and certificates.</li><li>Analyze what happens from typing a URL to seeing the page rendered.</li></ol></div><div class="bloom"><h3><span class="tag">L5</span> Evaluate</h3><ol><li>Justify why IMAP is preferred over POP3 for users with several devices.</li><li>Judge the importance of DNS caching for web performance.</li></ol></div><div class="bloom"><h3><span class="tag">L6</span> Create</h3><ol><li>Design a simple client-server setup for a college notes website and name the protocols involved.</li></ol></div></section><nav class="pager"><span></span><a href="index.html">All units</a><a href="unit-2.html">Unit 2 →</a></nav></main></div>
+<footer class="foot"><strong>Purushottam Mandal</strong>Web Technology Notes · CS35302<br/><small>B.Tech CSE · 5th Semester · Quantum University · 2026–27</small></footer>
+</body>
+</html>

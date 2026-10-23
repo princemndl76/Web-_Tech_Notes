@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Unit 3 - Web Technology</title>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="../index.html"><span class="brand-mark">PM</span><span class="brand-copy"><span class="brand-name">PURUSHOTTAM MANDAL</span><span class="brand-subtitle">Web Technology Notes</span></span></a></div></header>
+<div class="layout"><aside class="toc"><p class="toc-title">In this unit</p><ul><li><a href="#introduction-to-web-services">Introduction to web services</a></li><li><a href="#uddi-and-soap">UDDI and SOAP</a></li><li><a href="#wsdl-and-web-service">WSDL and web service</a></li><li><a href="#architecture-of-web-services">Architecture of web services</a></li><li><a href="#developing-and-deploying-web-services">Developing and deploying web services</a></li><li><a href="#ajax">Ajax</a></li><li><a href="#corba">CORBA</a></li><li><a href="#soap-vs-rest">SOAP vs REST</a></li><li><a href="#wsdl-structure-example">WSDL structure example</a></li><li><a href="#quick-revision"><b>Quick revision</b></a></li><li><a href="#important-questions"><b>Important questions</b></a></li></ul></aside><main><h1>Unit 3: Web services and Ajax</h1><section id="introduction-to-web-services"><h2>Introduction to web services</h2>
+<p>A <b>web service</b> is a software component that offers functions over a network using standard protocols, so different platforms and languages can work together.</p>
+<ul>
+<li>Uses XML or JSON for data and HTTP for transport.</li>
+<li>Platform and language independent.</li>
+<li><b>Types:</b> SOAP-based and RESTful.</li>
+</ul><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>A web service is a software service accessible over a network through standardized web technologies. It enables different applications and platforms to communicate.</p><p><strong>Example: </strong>An online shopping application can call a payment service to verify a transaction.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Platform independence</li><li>Application interoperability</li><li>Reusable services</li><li>Loose coupling</li></ul></td><td><ul><li>Network latency</li><li>Security and authentication challenges</li><li>More complex distributed debugging</li></ul></td></tr></table></div></section><section id="uddi-and-soap"><h2>UDDI and SOAP</h2>
+<p><b>UDDI</b> (Universal Description, Discovery and Integration) is a registry where providers publish services and clients find them.</p>
+<p><b>SOAP</b> (Simple Object Access Protocol) is an XML-based messaging protocol. A SOAP message has:</p>
+<ul>
+<li><b>Envelope:</b> root element that wraps the message.</li>
+<li><b>Header:</b> optional, carries extra information such as authentication.</li>
+<li><b>Body:</b> the actual request or response.</li>
+<li><b>Fault:</b> optional, reports errors.</li>
+</ul><pre><code>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"&gt;
+  &lt;soap:Body&gt;
+    &lt;getPrice&gt;&lt;item&gt;Book&lt;/item&gt;&lt;/getPrice&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</code></pre><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>UDDI (Universal Description, Discovery and Integration) was designed as a registry for discovering web services. SOAP is a protocol framework for exchanging structured XML messages.</p><p><strong>Example: </strong>A SOAP client sends an XML request to a service endpoint and receives an XML response.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>SOAP supports formal contracts and extensions</li><li>UDDI provides a standardized discovery concept</li><li>Works across platforms</li></ul></td><td><ul><li>SOAP messages can be verbose</li><li>XML processing adds overhead</li><li>UDDI is less common in modern public service discovery</li></ul></td></tr></table></div></section><section id="wsdl-and-web-service"><h2>WSDL and web service</h2>
+<p><b>WSDL</b> (Web Services Description Language) is an XML document that describes a service: what it offers, how to call it and where it lives.</p>
+<ul>
+<li><b>types:</b> data types used.</li>
+<li><b>message:</b> data exchanged.</li>
+<li><b>portType:</b> operations offered.</li>
+<li><b>binding:</b> protocol and data format.</li>
+<li><b>service:</b> endpoint address.</li>
+</ul><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>WSDL (Web Services Description Language) is an XML-based description of a web service, including operations, messages, bindings and endpoints.</p><p><strong>Example: </strong>A WSDL document can describe an operation named getStudent that accepts an ID and returns student details.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Machine-readable service contract</li><li>Improves interoperability</li><li>Helps tools generate client/server code</li></ul></td><td><ul><li>Verbose XML</li><li>Can be complex to understand manually</li><li>Strong contracts may reduce flexibility</li></ul></td></tr></table></div></section><section id="architecture-of-web-services"><h2>Architecture of web services</h2>
+<p>The classic architecture has three roles:</p>
+<ol>
+<li><b>Service provider:</b> creates the service and publishes its WSDL to the registry.</li>
+<li><b>Service registry:</b> UDDI directory where services are listed.</li>
+<li><b>Service requester:</b> finds the service in the registry, then binds to the provider and calls it with SOAP.</li>
+</ol>
+<p>The three actions are <b>publish</b>, <b>find</b> and <b>bind</b>.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>A common web-service architecture has a service provider, service requester and optional service registry, communicating through network protocols and service descriptions.</p><p><strong>Example: </strong>A client discovers or already knows a service endpoint, reads its contract and invokes an operation.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Separation of responsibilities</li><li>Reusable services</li><li>Interoperability across systems</li></ul></td><td><ul><li>Multiple components increase complexity</li><li>Network failures must be handled</li><li>Security must be designed across boundaries</li></ul></td></tr></table></div></section><section id="developing-and-deploying-web-services"><h2>Developing and deploying web services</h2>
+<ol>
+<li>Write the service logic (for example a Java class).</li>
+<li>Expose it as a web service (annotations such as <code>@WebService</code>, or a REST controller).</li>
+<li>Generate or write the WSDL.</li>
+<li>Deploy to an application server (Tomcat, GlassFish, WildFly).</li>
+<li>Publish to a registry, then test with a client or a tool such as SoapUI or Postman.</li>
+</ol><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>Development includes designing operations and data, implementing endpoints, testing, securing and deploying the service on a server or cloud platform.</p><p><strong>Example: </strong>A REST or SOAP service can expose /students/{id}, validate the request, query a database and return structured data.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Reusable backend functionality</li><li>Easy integration with multiple clients</li><li>Can be independently deployed and scaled</li></ul></td><td><ul><li>Requires monitoring and versioning</li><li>Deployment configuration can be complex</li><li>Backward compatibility must be managed</li></ul></td></tr></table></div></section><section id="ajax"><h2>Ajax</h2>
+<p><b>Ajax</b> (Asynchronous JavaScript and XML) updates part of a page by exchanging data with the server in the background, with no full reload.</p>
+<p><b>Benefits:</b> faster response, less bandwidth, smoother user experience.</p><pre><code>fetch("/api/notes")
+  .then(res =&gt; res.json())
+  .then(data =&gt; {
+    document.getElementById("list").textContent = data.length + " notes";
+  });</code></pre>
+<p>The older approach uses the <code>XMLHttpRequest</code> object with <code>readyState</code> 4 and <code>status</code> 200 meaning success.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>AJAX (Asynchronous JavaScript and XML) is a technique in which JavaScript communicates with a server asynchronously and updates part of a page without a full page reload. Modern AJAX commonly uses JSON rather than XML.</p><p><strong>Example: </strong>A search box sends a request as the user types and updates suggestions without refreshing the page.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Faster-feeling interfaces</li><li>Partial page updates</li><li>Reduced full-page reloads</li></ul></td><td><ul><li>More client-side complexity</li><li>Requires careful error/loading handling</li><li>Search-engine and accessibility behavior must be considered</li></ul></td></tr></table></div></section><section id="corba"><h2>CORBA</h2>
+<p><b>CORBA</b> (Common Object Request Broker Architecture) lets objects written in different languages on different machines call each other.</p>
+<ul>
+<li><b>IDL:</b> Interface Definition Language describes object interfaces.</li>
+<li><b>ORB:</b> Object Request Broker carries requests and replies.</li>
+<li><b>IIOP:</b> protocol used between ORBs over TCP/IP.</li>
+<li><b>Stub and skeleton:</b> proxy code on the client and server sides.</li>
+</ul><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>CORBA (Common Object Request Broker Architecture) is a distributed-object standard that allows objects written in different languages and running on different systems to communicate through an Object Request Broker.</p><p><strong>Example: </strong>A client can invoke a method on a remote object without needing to know its physical location.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Language and platform interoperability</li><li>Supports distributed objects</li><li>Hides many communication details</li></ul></td><td><ul><li>Complex architecture</li><li>Heavy compared with many modern HTTP APIs</li><li>Less common in modern web development</li></ul></td></tr></table></div></section><section id="soap-vs-rest"><h2>SOAP vs REST</h2>
+<table>
+<tr><th></th><th>SOAP</th><th>REST</th></tr>
+<tr><td>Type</td><td>Protocol</td><td>Architectural style</td></tr>
+<tr><td>Data format</td><td>XML only</td><td>JSON, XML, text</td></tr>
+<tr><td>Contract</td><td>WSDL</td><td>Optional (OpenAPI)</td></tr>
+<tr><td>Transport</td><td>HTTP, SMTP, others</td><td>HTTP</td></tr>
+<tr><td>Weight</td><td>Heavier, more overhead</td><td>Lightweight, faster</td></tr>
+<tr><td>Security</td><td>Built-in WS-Security</td><td>HTTPS, tokens</td></tr>
+<tr><td>Best for</td><td>Enterprise, strict contracts</td><td>Web and mobile apps</td></tr>
+</table>
+<p>REST uses URLs for resources and HTTP methods for actions: <code>GET /students/5</code> reads student 5, <code>DELETE /students/5</code> removes them.</p><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>SOAP is a protocol-based messaging approach with XML envelopes and formal standards. REST is an architectural style that commonly uses HTTP resources and representations such as JSON.</p><p><strong>Example: </strong>A banking enterprise system may use SOAP for a strict contract, while a public web API may use REST with JSON.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>SOAP: strong contracts, standards and enterprise extensions</li><li>REST: simple, cache-friendly and widely used for HTTP APIs</li></ul></td><td><ul><li>SOAP: verbose and heavier</li><li>REST: conventions can vary and formal contracts are not inherent</li></ul></td></tr></table><div class="difference-box"><h4>📊 Difference / Comparison</h4><table><tr><th>Aspect</th><th>Option A</th><th>Option B</th></tr><tr><td>Nature</td><td>Protocol/message framework</td><td>Architectural style</td></tr><tr><td>Common format</td><td>XML</td><td>JSON, XML, etc.</td></tr><tr><td>Contract</td><td>Often WSDL/strict contract</td><td>Often OpenAPI or informal conventions</td></tr><tr><td>Typical use</td><td>Enterprise/strict integrations</td><td>Web/mobile APIs</td></tr></table></div></div></section><section id="wsdl-structure-example"><h2>WSDL structure example</h2><pre><code>&lt;definitions name="PriceService"&gt;
+  &lt;message name="GetPriceRequest"&gt;&lt;part name="item" type="xs:string"/&gt;&lt;/message&gt;
+  &lt;message name="GetPriceResponse"&gt;&lt;part name="price" type="xs:float"/&gt;&lt;/message&gt;
+
+  &lt;portType name="PricePort"&gt;
+    &lt;operation name="getPrice"&gt;
+      &lt;input message="GetPriceRequest"/&gt;
+      &lt;output message="GetPriceResponse"/&gt;
+    &lt;/operation&gt;
+  &lt;/portType&gt;
+
+  &lt;binding name="PriceBinding" type="PricePort"&gt; ... &lt;/binding&gt;
+  &lt;service name="PriceService"&gt; ... &lt;/service&gt;
+&lt;/definitions&gt;</code></pre><div class="exam-booster"><h3>🎯 Exam Booster</h3><p><strong>Simple explanation: </strong>A WSDL document typically describes types, messages, port types/interfaces, bindings and service endpoints. Together these parts define how a client can call the service.</p><p><strong>Example: </strong>The types section defines an XML schema; messages reference those types; bindings specify the communication style; service defines the endpoint.</p><table><tr><th>Advantages</th><th>Disadvantages</th></tr><tr><td><ul><li>Clear machine-readable contract</li><li>Supports tool-assisted integration</li></ul></td><td><ul><li>XML verbosity</li><li>Large WSDL files can be difficult to maintain</li></ul></td></tr></table></div></section><section id="quick-revision"><h2>Quick revision</h2><ul><li>Web service = platform-independent function call over a network.</li><li>SOAP = XML messaging (Envelope, Header, Body, Fault). WSDL describes. UDDI lists.</li><li>Publish, find, bind: the three actions of the architecture.</li><li>REST is lightweight and uses HTTP methods; SOAP is heavier but has a strict contract.</li><li>Ajax updates part of a page without a reload (XMLHttpRequest or fetch).</li><li>CORBA = IDL + ORB + IIOP for cross-language distributed objects.</li></ul></section><section id="important-questions"><h2>Important questions by Bloom level</h2><p class="note">Course outcome: <b>CO3</b>. Start with Remember and Understand for short answers, and practise Apply, Analyze, Evaluate and Create for long answers.</p><div class="bloom"><h3><span class="tag">L1</span> Remember</h3><ol><li>Define a web service.</li><li>Expand SOAP, WSDL, UDDI, CORBA and Ajax.</li><li>List the parts of a SOAP message.</li><li>List the main elements of a WSDL document.</li></ol></div><div class="bloom"><h3><span class="tag">L2</span> Understand</h3><ol><li>Explain the architecture of web services (publish, find, bind).</li><li>Explain the role of UDDI, SOAP and WSDL.</li><li>Explain how Ajax improves the performance of a web page.</li><li>Explain the components of CORBA (IDL, ORB, IIOP).</li></ol></div><div class="bloom"><h3><span class="tag">L3</span> Apply</h3><ol><li>Write a SOAP request message to call <code>getPrice</code> for the item 'Book'.</li><li>Write JavaScript using <code>fetch</code> to load JSON from <code>/api/notes</code> and show it in a list.</li><li>List the steps to develop and deploy a simple web service on Tomcat.</li></ol></div><div class="bloom"><h3><span class="tag">L4</span> Analyze</h3><ol><li>Compare SOAP and REST web services.</li><li>Analyze how a synchronous page load differs from an Ajax request.</li></ol></div><div class="bloom"><h3><span class="tag">L5</span> Evaluate</h3><ol><li>Justify the choice of REST for a mobile app backend and SOAP for a banking integration.</li></ol></div><div class="bloom"><h3><span class="tag">L6</span> Create</h3><ol><li>Design a web service for a college library: list operations, input and output messages, and sketch the WSDL.</li></ol></div></section><nav class="pager"><a href="unit-2.html">← Unit 2</a><a href="index.html">All units</a><a href="unit-4.html">Unit 4 →</a></nav></main></div>
+<footer class="foot"><strong>Purushottam Mandal</strong>Web Technology Notes · CS35302<br/><small>B.Tech CSE · 5th Semester · Quantum University · 2026–27</small></footer>
+</body>
+</html>
