@@ -103,12 +103,12 @@ a:hover {
     height: 48px;
     max-width: 48px;
     max-height: 48px;
-    min-width: 48px;
-    min-height: 48px;
     object-fit: contain;
-    object-position: center;
     display: block;
     flex-shrink: 0;
+
+    /* IMPORTANT */
+    position: static;
 }
 
 
