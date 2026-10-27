@@ -824,3 +824,263 @@ th:last-child {
         transition: none !important;
     }
 }
+/* =========================================
+   TOPIC VISUAL CARD
+========================================= */
+
+.topic-visual {
+    margin: 22px 0 28px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139,124,255,.10),
+            rgba(57,216,255,.05)
+        );
+    box-shadow: 0 15px 40px rgba(0,0,0,.20);
+}
+
+.topic-visual img {
+    width: 100%;
+    max-height: 330px;
+    display: block;
+    object-fit: cover;
+}
+
+.topic-caption {
+    padding: 13px 17px;
+    color: var(--muted);
+    font-size: .85rem;
+    border-top: 1px solid var(--line);
+}
+
+
+/* =========================================
+   TOPIC INTRO BOX
+========================================= */
+
+.topic-intro {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid rgba(139,124,255,.20);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,124,255,.08),
+            rgba(57,216,255,.05)
+        );
+}
+
+.topic-intro-title {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-weight: 850;
+    color: #ffffff;
+}
+
+.topic-intro p {
+    margin: 0;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.flow-box {
+    min-width: 135px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.045);
+    color: #ffffff;
+    font-weight: 750;
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+}
+
+.flow-box small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    font-weight: 900;
+}
+
+
+/* =========================================
+   ADVANTAGE / DISADVANTAGE CARDS
+========================================= */
+
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.pros,
+.cons {
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+}
+
+.pros {
+    background: rgba(57,216,255,.055);
+}
+
+.cons {
+    background: rgba(255,121,198,.055);
+}
+
+.pros h3,
+.cons h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.pros ul,
+.cons ul {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   REAL LIFE EXAMPLE
+========================================= */
+
+.real-example {
+    margin: 24px 0;
+    padding: 20px;
+    border-radius: 18px;
+    border-left: 4px solid var(--secondary);
+    background: rgba(57,216,255,.055);
+}
+
+.real-example h3 {
+    margin: 0 0 8px;
+    color: #ffffff;
+}
+
+.real-example p {
+    margin: 0;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   MEMORY TRICK
+========================================= */
+
+.memory-trick {
+    margin: 24px 0;
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,121,198,.20);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,121,198,.07),
+            rgba(139,124,255,.06)
+        );
+}
+
+.memory-trick h3 {
+    margin: 0 0 8px;
+    color: #ffd7ee;
+}
+
+.memory-trick p {
+    margin: 0;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   TOPIC TAGS
+========================================= */
+
+.topic-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.topic-tag {
+    padding: 6px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.045);
+    color: #cdd7f0;
+    font-size: .75rem;
+    font-weight: 750;
+}
+
+
+/* =========================================
+   IMPORTANT POINTS
+========================================= */
+
+.key-points {
+    margin: 24px 0;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(139,124,255,.055);
+    border: 1px solid rgba(139,124,255,.18);
+}
+
+.key-points h3 {
+    margin: 0 0 12px;
+}
+
+.key-points li {
+    margin-bottom: 7px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+
+    .topic-visual img {
+        max-height: 240px;
+    }
+
+    .flow-diagram {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .flow-box {
+        width: 100%;
+    }
+}
